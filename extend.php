@@ -20,6 +20,8 @@ use Illuminate\Events\Dispatcher;
 return [
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
+    (new Extend\Frontend('forum'))
+        ->content(Listeners\AddBrowserSentry::class),
     new Extend\Locales(__DIR__.'/locale'),
     function (Dispatcher $events, Application $app) {
         $app->register(SentryServiceProvider::class);
@@ -27,5 +29,5 @@ return [
         $events->listen(ConfigureMiddleware::class, function (ConfigureMiddleware $event) {
             $event->pipe(app(HandleErrorsWithSentry::class));
         });
-    },
+    }
 ];
