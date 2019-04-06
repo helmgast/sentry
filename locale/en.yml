@@ -2,4 +2,5 @@ fof-sentry:
   admin:
     settings:
       dsn_label: Sentry DSN
-      browser_errors_label: Report browser errors?
+      browser_errors_label: Report browser errors
+      user_feedback_label: Let users send feedback

@@ -14,6 +14,9 @@ app.initializers.add('fof/sentry', () => {
                 <BooleanItem key="fof-sentry.browser_errors" cast={Number}>
                     {app.translator.trans('fof-sentry.admin.settings.browser_errors_label')}
                 </BooleanItem>,
+                <BooleanItem key="fof-sentry.user_feedback" cast={Number}>
+                {app.translator.trans('fof-sentry.admin.settings.user_feedback_label')}
+                </BooleanItem>,
             ],
         })
     )
